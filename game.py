@@ -58,7 +58,22 @@ while menu_response not in menu and location == 'menu':
             location = 'menu'
 
     if location == 'Blacksmith':
-        print('hello')
+        print("Your gold: " + str(gold))
+        print("Weapons: Wood Sword $20 (wsword), Stone Sword $40 (stosword), Steel Sword $60 (stesword), Diamond Sword $80 (dsword)")
+        print("Armour: Leather Armour $20 (larmour), Chainmail Armour $40 (charmour), Steel Armour $60 (stearmour), Diamond Armour $80 (darmour)")
+        while location == 'Blacksmith':
+            blacksmith_buy = input("What would you like to buy? (back to go return to menu)")
+            if blacksmith_buy == 'wsword':
+                if gold >= 20 and player_atk < 20:
+                    print("Purchase Successful!")
+                    player_atk = 20
+                else:
+                    print("You cannot buy this item.")
+            if blacksmith_buy == 'back':
+                print('Returning you to the menu!')
+                sleep(1)
+                menu_response = ''
+                location = 'menu'
 
     if location == 'Marketplace':
         print('hey')
